@@ -16,10 +16,11 @@ endif
 
 cd ~/Documents/workplace/cocos2d-x/projects
 
-map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+map <F5> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 map <F1> :e 
 map <F2> :lcd 
 map <F3> :pwd<CR>
+map <F4> :e.<CR>
 map ] <C-W>w
 map [ <C-W>W 
 
