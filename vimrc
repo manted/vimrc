@@ -14,6 +14,8 @@ if v:progname =~? "evim"
   finish
 endif
 
+cd ~/Documents/workplace/cocos2d-x/projects
+
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 " Use Vim settings, rather than Vi settings (much better!).
