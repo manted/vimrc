@@ -23,6 +23,10 @@ map <F3> :pwd<CR>
 map <F4> :e.<CR>
 map ] <C-W>w
 map [ <C-W>W 
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
