@@ -16,7 +16,7 @@ endif
 
 cd ~/Documents/workplace/cocos2d-x/projects
 
-map <F5> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+map <F5> :vsplit %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 map <F1> :e 
 map <F2> :lcd 
 map <F3> :pwd<CR>
@@ -41,7 +41,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb2312,gb18030,big5
 set backspace=indent,eol,start
 
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 
 if has("vms")

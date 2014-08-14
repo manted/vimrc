@@ -20,7 +20,7 @@ set ch=2		" Make command line two lines high
 
 set mousehide		" Hide the mouse when typing text
 
-map <F5> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+map <F5> :vsplit %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>
@@ -84,6 +84,6 @@ set autoread
 
 syntax enable
 
-set background=dark
+set background=light
 colorscheme solarized
 
