@@ -45,6 +45,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb2312,gb18030,big5
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" solarized https://github.com/altercation/vim-colors-solarized
 syntax enable
 set background=light
 colorscheme solarized
