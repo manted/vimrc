@@ -16,7 +16,11 @@ endif
 
 cd ~/Documents/workplace/cocos2d-x/projects
 
-map <F5> :vsplit %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+" install pathogen to install plugins https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
+filetype plugin on
+
+map <F5> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 map <F1> :e 
 map <F2> :lcd 
 map <F3> :pwd<CR>
@@ -27,7 +31,7 @@ nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-map <F5> :lcd ~/Documents/workplace/cocos2d-x/projects/<CR>
+map ,cc <plug>NERDCommenterToggle
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -100,7 +104,7 @@ endif
 if has('gui_running')
 "    set background=light
 else
-    set background=dark
+    set background=light
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -145,4 +149,6 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+
 
