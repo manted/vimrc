@@ -31,6 +31,7 @@ nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+" nerd commenter https://github.com/scrooloose/nerdcommenter
 map ,cc <plug>NERDCommenterToggle
 
 " Use Vim settings, rather than Vi settings (much better!).
