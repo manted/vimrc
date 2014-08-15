@@ -20,7 +20,7 @@ cd ~/Documents/workplace/cocos2d-x/projects
 execute pathogen#infect()
 filetype plugin on
 
-map <F5> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+map <F5> :vsplit %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 map <F1> :e 
 map <F2> :lcd 
 map <F3> :pwd<CR>
@@ -151,6 +151,8 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+
 
 
 
