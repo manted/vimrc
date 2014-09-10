@@ -25,8 +25,10 @@ map <F1> :e
 map <F2> :lcd 
 map <F3> :pwd<CR>
 map <F4> :e.<CR>
-map ] <C-W>w
-map [ <C-W>W 
+map <D-]> <C-w>w
+map <D-[> <C-w>W 
+map <D-S-LEFT> <C-w>v
+map <D-S-RIGHT> <C-w>v<C-w>w
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
