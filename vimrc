@@ -36,6 +36,9 @@ vnoremap <S-Tab> <gv
 " nerd commenter https://github.com/scrooloose/nerdcommenter
 map ,cc <plug>NERDCommenterToggle
 
+autocmd BufRead,BufNewFile  *.c,*.cpp,*.h,*.mm,*.java,*.sh,*.sql,*.txt set noexpandtab ts=4 sw=4
+autocmd BufRead,BufNewFile  *.rb,*.yml,*.jbuilder set expandtab ts=2 sw=2
+
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
