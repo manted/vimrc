@@ -29,3 +29,6 @@ let NERDTreeShowHidden=1
 
 " open NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
+" ============ Search related =======================
+map <leader>ag :Ag!<space>
