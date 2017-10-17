@@ -1,40 +1,27 @@
+filetype off
 
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2014 Feb 05
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+" Change leader to a comma because the backslash is too far away
+" That means all \x commands turn into ,x
+" The mapleader has to be set before vundle starts loading all 
+" the plugins.
+let mapleader=","
+
+" =============== Vundle Initialization ===============
+" This loads all the plugins specified in ~/.vim/vundles.vim
+" Use Vundle plugin to manage all other plugins
+if filereadable(expand("~/.vim/vundles.vim"))
+  source ~/.vim/vundles.vim
+endif
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
 endif
 
-cd ~/Documents/workplace/cocos2d-x/projects
-
 " install pathogen to install plugins https://github.com/tpope/vim-pathogen
 execute pathogen#infect()
 filetype plugin on
 
-map <F5> :vsplit %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-map <F1> :e 
-map <F2> :lcd 
-map <F3> :pwd<CR>
-map <F4> :e.<CR>
-map <D-]> <C-w>w
-map <D-[> <C-w>W 
-map <D-S-LEFT> <C-w>v
-map <D-S-RIGHT> <C-w>v<C-w>w
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
-" nerd commenter https://github.com/scrooloose/nerdcommenter
-map ,cc <plug>NERDCommenterToggle
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -49,8 +36,9 @@ set backspace=indent,eol,start
 
 " solarized https://github.com/altercation/vim-colors-solarized
 syntax enable
-set background=light
-colorscheme solarized
+au BufReadPost *.hbs set syntax=html
+"set background=dark
+"colorscheme solarized
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -64,14 +52,15 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set number
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+" indentation
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set smarttab
 set expandtab
 
-autocmd BufRead,BufNewFile  *.c,*.cpp,*.h,*.mm,*.java,*.sh,*.sql,*.txt set noexpandtab ts=4 sw=4
-autocmd BufRead,BufNewFile  *.rb,*.yml,*.jbuilder set expandtab ts=2 sw=2
+autocmd BufRead,BufNewFile  *.c,*.cpp,*.h,*.mm,*.sh,*.sql,*.txt set noexpandtab ts=4 sw=4
+autocmd BufRead,BufNewFile  *.java,*.rb,*.yml,*.jbuilder set expandtab ts=2 sw=2
 
 set wrap
 
@@ -85,6 +74,27 @@ set ignorecase
 set incsearch
 
 set autoread
+
+" ================ Completion =======================
+
+set wildmode=list:longest
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.class
+set wildignore+=*.jar
+set wildignore+=*.bin
+set wildignore+=*.dmg
+
+let g:ctrlp_working_path_mode = 'ra'
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -103,6 +113,7 @@ endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
+let g:ctrlp_show_hidden = 1
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
@@ -180,5 +191,5 @@ function! AutoHighlightToggle()
   endif
 endfunction
 
-
-
+" ================ Custom Settings ========================
+so ~/.vim/settings.vim
