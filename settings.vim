@@ -25,6 +25,9 @@ vnoremap <S-Tab> <gv
 " nerd commenter https://github.com/scrooloose/nerdcommenter
 map ,cc <plug>NERDCommenterToggle
 map <CR><CR> :w<CR>
+map ,qq :q<CR>
+map ,vs :vs<CR>
+map ,ff *
 let NERDTreeShowHidden=1
 
 " open NERDTree
