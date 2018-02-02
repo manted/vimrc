@@ -28,6 +28,7 @@ map <CR><CR> :w<CR>
 map ,qq :q<CR>
 map ,vs :vs<CR>
 map ,ff *
+map ,fa :Ag!<space><cword><CR>
 let NERDTreeShowHidden=1
 
 " open NERDTree
