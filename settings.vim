@@ -29,6 +29,7 @@ map ,qq :q<CR>
 map ,vs :vs<CR>
 map ,ff *
 map ,fa :Ag!<space><cword><CR>
+map ,fm :GoFmt<CR>
 let NERDTreeShowHidden=1
 
 " open NERDTree
@@ -36,3 +37,6 @@ map <C-n> :NERDTreeToggle<CR>
 
 " ============ Search related =======================
 map <leader>ag :Ag!<space>
+
+" Clipboard
+set clipboard=unnamed
